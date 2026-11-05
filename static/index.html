@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Fiscal Fusion | AI Financial Conversation Simulator</title>
+
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="icon" href="data:,">
+
+    <!-- Google reCAPTCHA v2 -->
+    <script src="https://www.google.com/recaptcha/api.js?render=explicit" async defer></script>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <header class="navbar">
+
+        <a href="#home" class="logo">
+            💠 Fiscal Fusion
+        </a>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#chatbot">AI Chatbot</a>
+            <a href="#history" id="historyNav" hidden>My History</a>
+            <a href="#settings" id="settingsNav" hidden>Profile & Settings</a>
+            <a href="#adminDashboard" id="adminDashboardNav" hidden>
+                Admin Dashboard
+            </a>
+            <a href="#contact">Contact</a>
+
+            <a href="#signup" id="signupNav" class="nav-signup">Sign Up</a>
+            <a href="#login" id="loginNav" class="nav-login">Login</a>
+
+            <button id="logoutBtn" type="button" hidden>
+                Logout
+            </button>
+        </nav>
+
+    </header>
+
+
+    <!-- HOME SECTION -->
+    <section id="home" class="hero">
+
+        <div class="hero-content">
+
+            <span class="hero-badge">
+                ✨ Powered by Generative AI
+            </span>
+
+            <h1>
+                Smarter Financial
+                <span>Conversations</span>
+            </h1>
+
+            <h2>
+                Building Chatbots in Financial Services
+            </h2>
+
+            <p>
+                Experience intelligent financial discussions powered by
+                Generative AI. Simulate conversations between industry
+                professionals, explore innovative solutions, and
+                transform ideas into collaborative decisions.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#chatbot" class="btn">
+                    🚀 Start AI Conversation
+                </a>
+
+                <a href="#about" class="btn-outline">
+                    Explore Features
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="hero-visual">
+
+            <div class="visual-card">
+
+                <div class="visual-icon">🤖</div>
+
+                <h3>AI Financial Assistant</h3>
+
+                <p>
+                    Intelligent Discussions
+                </p>
+
+                <div class="visual-message">
+                    💬 Analyzing financial challenges...
+                </div>
+
+                <div class="visual-message second">
+                    ✓ Generating collaborative solutions
+                </div>
+
+                <div class="visual-status">
+                    <span class="status-dot"></span>
+                    AI System Ready
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="about">
+
+        <div class="section-heading">
+
+            <span class="section-tag">ABOUT OUR PLATFORM</span>
+
+            <h2>Discover Fiscal Fusion</h2>
+
+            <p>
+                Fiscal Fusion is an AI-powered financial conversation
+                simulator designed to support meaningful discussions
+                between financial industry stakeholders.
+            </p>
+
+        </div>
+
+        <div class="features">
+
+            <div class="feature-card">
+
+                <div class="feature-icon">🧠</div>
+
+                <h3>Generative AI</h3>
+
+                <p>
+                    Generate intelligent, context-aware financial
+                    discussions using Google's Gemini AI.
+                </p>
+
+            </div>
+
+            <div class="feature-card">
+
+                <div class="feature-icon">👥</div>
+
+                <h3>Stakeholder Personas</h3>
+
+                <p>
+                    Simulate professional discussions between two
+                    financial stakeholders with different goals
+                    and responsibilities.
+                </p>
+
+            </div>
+
+            <div class="feature-card">
+
+                <div class="feature-icon">🤝</div>
+
+                <h3>Collaborative Decisions</h3>
+
+                <p>
+                    Explore challenges, negotiate solutions, and
+                    generate practical agreements and action plans.
+                </p>
+
+            </div>
+
+            <div class="feature-card">
+
+                <div class="feature-icon">🔐</div>
+
+                <h3>Secure User Accounts</h3>
+
+                <p>
+                    Register and log in to access your personal
+                    AI conversation workspace.
+                </p>
+
+            </div>
+
+            <div class="feature-card">
+
+                <div class="feature-icon">📚</div>
+
+                <h3>Conversation History</h3>
+
+                <p>
+                    Save generated discussions and revisit
+                    previous conversations whenever needed.
+                </p>
+
+            </div>
+
+            <div class="feature-card">
+
+                <div class="feature-icon">📥</div>
+
+                <h3>Download Reports</h3>
+
+                <p>
+                    Download AI-generated discussions,
+                    final agreements, and action plans.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- AUTHENTICATION SECTION -->
+    <section class="authentication" id="authenticationSection"hidden>
+
+        <div class="section-heading">
+
+            <span class="section-tag">GET STARTED</span>
+
+            <h2>Your Financial AI Workspace</h2>
+
+            <p>
+                Create an account or log in to start generating
+                intelligent financial conversations.
+            </p>
+
+        </div>
+
+        <div class="auth-grid">
+
+            <!-- SIGNUP -->
+            <div id="signup" class="auth-card">
+
+                <div class="auth-icon">📝</div>
+
+                <h2>Create Your Account</h2>
+
+                <p class="auth-description">
+                    Join Fiscal Fusion and explore AI-powered
+                    financial conversations.
+                </p>
+
+                <form id="signupForm">
+
+                    <label for="signupName">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="signupName"
+                        placeholder="Enter your full name"
+                        autocomplete="name"
+                        required
+                    >
+
+                    <label for="signupEmail">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="signupEmail"
+                        placeholder="Enter your email address"
+                        autocomplete="email"
+                        required
+                    >
+
+                    <label for="signupPassword">
+                        Password
+                    </label>
+
+                    
+                    <div class="password-wrapper">
+                        <input
+                            type="password"
+                            id="signupPassword"
+                            placeholder="Create a strong password"
+                            autocomplete="new-password"
+                            minlength="8"
+                            required
+                        >
+                        <button
+                            type="button"
+                            class="toggle-password"
+                            data-target="signupPassword"
+                            aria-label="Show password"
+                            aria-pressed="false"
+                        >👁</button>
+                    </div>
+
+
+                    <label for="confirmPassword">
+                        Confirm Password
+                    </label>
+
+                    <div class="password-wrapper">
+                        <input
+                            type="password"
+                            id="confirmPassword"
+                            placeholder="Re-enter your password"
+                            autocomplete="new-password"
+                            minlength="8"
+                            required
+                        >
+                        <button
+                            type="button"
+                            class="toggle-password"
+                            data-target="confirmPassword"
+                            aria-label="Show confirm password"
+                            aria-pressed="false"
+                        >👁</button>
+                    </div>
+
+
+                    <div class="captcha-wrapper">
+                        <div id="recaptchaContainer"></div>
+                    </div>
+
+                    <button type="submit" class="auth-button">
+                        Create Account
+                    </button>
+
+                    <p id="signupMessage" class="form-message" role="status"></p>
+
+                </form>
+
+                <p class="auth-switch">
+                    Already have an account?
+                    <a href="#login">Login here</a>
+                </p>
+
+            </div>
+
+
+            <!-- LOGIN -->
+            <div id="login" class="auth-card">
+
+                <div class="auth-icon">🔑</div>
+
+                <h2>Welcome Back</h2>
+
+                <p class="auth-description">
+                    Log in to continue your financial
+                    AI journey.
+                </p>
+
+                <form id="loginForm">
+
+                    <label for="loginEmail">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="loginEmail"
+                        placeholder="Enter your registered email"
+                        autocomplete="email"
+                        required
+                    >
+
+                    <label for="loginPassword">
+                        Password
+                    </label>
+
+                    <div class="password-wrapper">
+                        <input
+                            type="password"
+                            id="loginPassword"
+                            placeholder="Enter your password"
+                            autocomplete="current-password"
+                            required
+                        >
+                        <button
+                            type="button"
+                            class="toggle-password"
+                            data-target="loginPassword"
+                            aria-label="Show password"
+                            aria-pressed="false"
+                        >👁</button>
+                    </div>
+
+                    <button type="submit" class="auth-button">
+                        Login
+                    </button>
+
+                    <p id="loginMessage" class="form-message" role="status"></p>
+                    
+                    <p class="auth-switch">
+                        <a href="#forgot-password" id="forgotPasswordLink">
+                            Forgot Password?
+                        </a>
+                    </p>
+                </form>
+
+                <p class="auth-switch">
+                    Don't have an account?
+                    <a href="#signup">Sign up here</a>
+                </p>
+
+            </div>
+            
+            <div id="forgot-password" class="auth-card" hidden>
+                <h2>Forgot Password?</h2>
+                <p>Enter your registered email address to receive a password reset link.</p>
+
+                <form id="forgotPasswordForm">
+                    <div class="form-group">
+                        <label for="forgotPasswordEmail">Email Address</label>
+                        <input
+                            type="email"
+                            id="forgotPasswordEmail"
+                            name="email"
+                            placeholder="Enter your registered email"
+                            required
+                        >
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">
+                        Send Reset Link
+                    </button>
+
+                    <p
+                        id="forgotPasswordMessage"
+                        class="form-message"
+                        role="status"
+                    ></p>
+                </form>
+
+                <p class="auth-switch">
+                    <a href="#login" id="backToLoginLink">Back to Login</a>
+                </p>
+            </div>
+            
+            <div id="reset-password" class="auth-card" hidden>
+                <h2>Reset Your Password</h2>
+                <p>Enter and confirm your new password below.</p>
+
+                <form id="resetPasswordForm">
+                    
+                    <div class="form-group">
+                        <label for="newPassword">New Password</label>
+
+                        <div class="password-wrapper">  
+                            <input
+                                type="password"
+                                id="newPassword"
+                                name="new_password"
+                                minlength="8"
+                                maxlength="128"
+                                autocomplete="new-password"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                class="toggle-password"
+                                data-target="newPassword"
+                                aria-label="Show new password"
+                                aria-pressed="false"
+                            >
+                                <span class="eye-icon">👁</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirmNewPassword">Confirm New Password</label>
+
+                        <div class="password-wrapper">
+                            <input
+                                type="password"
+                                id="confirmNewPassword"
+                                name="confirm_password"
+                                minlength="8"
+                                maxlength="128"
+                                autocomplete="new-password"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                class="toggle-password"
+                                data-target="confirmNewPassword"
+                                aria-label="Show confirm password"
+                                aria-pressed="false"
+                            >
+                                <span class="eye-icon">👁</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">
+                        Reset Password
+                    </button>
+
+                    <p
+                        id="resetPasswordMessage"
+                        class="form-message"
+                        role="status"
+                    ></p>
+                </form>
+
+                <p class="auth-switch">
+                    <a href="#login" id="resetBackToLoginLink">Back to Login</a>
+                </p>
+            </div>
+
+
+        </div>
+
+    </section>
+
+    <!-- PROFILE & SETTINGS -->
+    <section id="settings" class="settings-section" hidden>
+        <div class="section-heading">
+            <span class="section-tag">YOUR ACCOUNT</span>
+            <h2>Profile & Settings</h2>
+            <p>View your registered account details and manage your session.</p>
+        </div>
+
+        <div class="profile-card">
+            <div class="profile-avatar">👤</div>
+            <h3>Personal Information</h3>
+
+            <div class="profile-detail">
+                <span>Full Name</span>
+                <strong id="settingsName">Loading...</strong>
+            </div>
+
+            <div class="profile-detail">
+                <span>Email Address</span>
+                <strong id="settingsEmail">Loading...</strong>
+            </div>
+            <div class="profile-detail">
+                <span>Account Role</span>
+                <strong id="settingsRole">Loading...</strong>
+            </div>
+            <p id="settingsStatus" class="form-message" role="status"></p>
+
+            <button id="settingsLogoutBtn" type="button" class="settings-logout">
+                Logout
+            </button>
+        </div>
+    </section>
+
+<!-- ADMIN DASHBOARD -->
+<section id="adminDashboard" class="admin-dashboard" hidden>
+
+    <div class="section-heading">
+        <span class="section-tag">ADMINISTRATION</span>
+        <h2>Admin Dashboard</h2>
+        <p>Monitor registered users and account activity across Fiscal Fusion.</p>
+    </div>
+
+    <div class="admin-dashboard-container">
+
+        <p id="adminDashboardStatus" class="form-message" role="status"></p>
+
+        <!-- STATISTICS -->
+        <div class="admin-stats-grid" id="adminStats">
+
+            <div class="admin-stat-card">
+                <span class="admin-stat-icon">👥</span>
+                <h3>Registered Users</h3>
+                <p id="adminTotalUsers">—</p>
+            </div>
+
+            <div class="admin-stat-card">
+                <span class="admin-stat-icon">💬</span>
+                <h3>Conversations</h3>
+                <p id="adminTotalConversations">—</p>
+            </div>
+
+            <div class="admin-stat-card">
+                <span class="admin-stat-icon">🔑</span>
+                <h3>Login Events</h3>
+                <p id="adminTotalLogins">—</p>
+            </div>
+
+            <div class="admin-stat-card">
+                <span class="admin-stat-icon">🚪</span>
+                <h3>Logout Events</h3>
+                <p id="adminTotalLogouts">—</p>
+            </div>
+
+        </div>
+
+        <button type="button" id="refreshAdminBtn" class="admin-refresh-btn">
+            🔄 Refresh Dashboard
+        </button>
+
+        <!-- REGISTERED USERS -->
+        <div class="admin-table-card">
+            <h3>👥 Registered Users</h3>
+            <p>Review account details and assigned roles.</p>
+
+            <div class="admin-table-wrapper">
+                <table class="admin-table">
+                    
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Current Role</th>
+                            <th>Registered At</th>
+                            <th>Manage Role</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="adminUsersBody">
+                        <tr>
+                            <td colspan="6">Loading users...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- ACTIVITY LOGS -->
+        <div class="admin-table-card">
+            <h3>🕒 Login & Logout Activity</h3>
+            <p>View the latest recorded account activity.</p>
+
+            <div class="admin-table-wrapper">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>User</th>
+                            <th>Email</th>
+                            <th>Event</th>
+                            <th>Timestamp</th>
+                        </tr>
+                    </thead>
+                    <tbody id="adminActivityBody">
+                        <tr>
+                            <td colspan="4">Loading activity...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+    <!-- AI CHATBOT SECTION -->
+    <section id="chatbot" class="chatbot">
+
+        <div class="section-heading">
+
+            <span class="section-tag">AI CONVERSATION STUDIO</span>
+
+            <h2>AI Financial Conversation Simulator</h2>
+
+            <p>
+                Choose a financial topic and two stakeholder personas
+                to generate a professional AI-powered discussion.
+            </p>
+
+        </div>
+
+
+        <!-- LOGIN REQUIRED -->
+        <div id="loginRequired" class="login-required">
+
+            <div class="lock-icon">🔒</div>
+
+            <h3>Login Required</h3>
+
+            <p>
+                Please log in to access the
+                AI Financial Conversation Simulator.
+            </p>
+
+            <a href="#login" class="btn">
+                Login to Continue
+            </a>
+
+        </div>
+
+
+        <!-- SIMULATOR CONTENT -->
+        <div id="simulatorContent" hidden>
+
+            <div class="chat-container">
+
+                <div class="chat-form-heading">
+
+                    <h3>⚙️ Configure Your Conversation</h3>
+
+                    <p>
+                        Customize the topic, personas, and
+                        conversation length.
+                    </p>
+
+                </div>
+
+                <label for="topic">
+                    Financial Topic
+                </label>
+
+                <input
+                    type="text"
+                    id="topic"
+                    value="Fraud Detection and Banking Security"
+                    placeholder="Enter a financial topic"
+                >
+
+                <div class="persona-grid">
+
+                    <div>
+
+                        <label for="persona1">
+                            👨‍💼 Persona 1
+                        </label>
+
+                        <input
+                            type="text"
+                            id="persona1"
+                            value="Bank Security Manager"
+                            placeholder="Enter first stakeholder"
+                        >
+
+                    </div>
+
+                    <div>
+
+                        <label for="persona2">
+                            👩‍💼 Persona 2
+                        </label>
+
+                        <input
+                            type="text"
+                            id="persona2"
+                            value="Customer Experience Manager"
+                            placeholder="Enter second stakeholder"
+                        >
+
+                    </div>
+
+                </div>
+
+                <label for="turns">
+                    Conversation Turns
+                </label>
+
+                <select id="turns">
+
+                    <option value="2">2 Turns</option>
+                    <option value="4">4 Turns</option>
+                    <option value="6">6 Turns</option>
+                    <option value="8" selected>8 Turns</option>
+                    <option value="10">10 Turns</option>
+                    <option value="12">12 Turns</option>
+
+                </select>
+
+                <button id="generateBtn" type="button">
+                    ✨ Generate AI Conversation
+                </button>
+
+                <p id="status" role="status"></p>
+
+            </div>
+
+
+            <!-- CONVERSATION OUTPUT -->
+            <div id="conversationOutput"></div>
+
+
+            <!-- FINAL AGREEMENT -->
+            <div id="agreementSection" hidden>
+
+                <div class="agreement-header">
+
+                    <span class="agreement-icon">🤝</span>
+
+                    <h2>Final Agreement</h2>
+
+                </div>
+
+                <p id="finalAgreement"></p>
+
+                <h3>📋 Action Plan</h3>
+
+                <ul id="actionPlan"></ul>
+
+                <button id="downloadBtn" type="button">
+                    📥 Download Conversation
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- HISTORY SECTION -->
+    <section id="history" class="history-section" hidden>
+
+        <div class="section-heading">
+
+            <span class="section-tag">YOUR WORKSPACE</span>
+
+            <h2>📚 My Conversation History</h2>
+
+            <p>
+                Access and review your previously
+                generated financial conversations.
+            </p>
+
+        </div>
+
+        <div class="history-container">
+
+            <button id="refreshHistoryBtn" type="button" class="history-refresh">
+                🔄 Refresh History
+            </button>
+
+            <p id="historyStatus" role="status"></p>
+
+            <div id="historyList"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+
+        <div class="section-heading">
+
+            <span class="section-tag">PROJECT INFORMATION</span>
+
+            <h2>Contact & Project Information</h2>
+
+            <p>
+                Fiscal Fusion is an academic Generative AI project
+                focused on intelligent financial conversations.
+            </p>
+
+        </div>
+
+        <div class="technology-list">
+
+            <span>Python</span>
+            <span>FastAPI</span>
+            <span>Gemini AI</span>
+            <span>JavaScript</span>
+            <span>HTML & CSS</span>
+            <span>SQLite</span>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            © 2026 Fiscal Fusion | Generative AI Project
+        </p>
+
+        <p>
+            Building Intelligent Financial Conversations
+        </p>
+
+    </footer>
+
+
+    <script src="/static/app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+.env
+venv/
+__pycache__/
+# Local user and conversation database
+*.db
+*.db-shm
+*.db-wal
+
+desktop.ini
+
+Fiscal-Fusion/
+desktop.ini
